@@ -1,12 +1,12 @@
 {
-	"name": "game-of-life",
+	"name": "@sondregj/conway",
 	"version": "0.1.0",
-	"description": "Conway's Game of Life",
+	"description": "Conway's Game of Life in TypeScript",
 	"author": "Sondre Gjellestad <sondre.gjellestad@hotmail.com> (https://sondregjellestad.space)",
-	"homepage": "https://github.com/sondregj/hitori#readme",
+	"homepage": "https://github.com/sondregj/conway#readme",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/sondregj/game-of-life.git"
+		"url": "git+https://github.com/sondregj/conway.git"
 	},
 	"license": "MIT",
 	"main": "dist/index.js",
@@ -23,7 +23,7 @@
 		"prepublishOnly": "npm test && npm run lint && npm run build"
 	},
 	"bugs": {
-		"url": "https://github.com/sondregj/game-of-life/issues"
+		"url": "https://github.com/sondregj/conway/issues"
 	},
 	"devDependencies": {
 		"@types/jest": "^24.0.18",
@@ -38,6 +38,6 @@
 		"dist/**/*"
 	],
 	"keywords": [
-		"game-of-life"
+		"game-of-life", "conway"
 	]
 }
