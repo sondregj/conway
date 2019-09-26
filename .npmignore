@@ -1,0 +1,7 @@
+test
+.env
+node_modules
+src
+tsconfig.json
+tslint.json
+.prettierrc

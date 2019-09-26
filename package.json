@@ -1,0 +1,43 @@
+{
+	"name": "game-of-life",
+	"version": "0.1.0",
+	"description": "Conway's Game of Life",
+	"author": "Sondre Gjellestad <sondre.gjellestad@hotmail.com> (https://sondregjellestad.space)",
+	"homepage": "https://github.com/sondregj/hitori#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sondregj/game-of-life.git"
+	},
+	"license": "MIT",
+	"main": "dist/index.js",
+	"types": "dist/index.d.js",
+	"declaration": true,
+	"scripts": {
+		"build": "tsc",
+		"format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+		"lint": "tslint -p tsconfig.json",
+		"test": "jest",
+		"preversion": "npm run lint",
+		"version": "npm run format && git add -A src",
+		"postversion": "git push && git push --tags",
+		"prepublishOnly": "npm test && npm run lint && npm run build"
+	},
+	"bugs": {
+		"url": "https://github.com/sondregj/game-of-life/issues"
+	},
+	"devDependencies": {
+		"@types/jest": "^24.0.18",
+		"jest": "^24.9.0",
+		"prettier": "^1.18.2",
+		"ts-jest": "^24.1.0",
+		"tslint": "^5.20.0",
+		"tslint-config-prettier": "^1.18.0",
+		"typescript": "^3.6.3"
+	},
+	"files": [
+		"dist/**/*"
+	],
+	"keywords": [
+		"game-of-life"
+	]
+}
