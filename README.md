@@ -83,7 +83,7 @@ const day1 = advance(genesis)
 The following TypeScript types are included.
 
 ```typescript
-import { Board, BoardTick, Cell, RuleFunction } from './@sondregj/conway'
+import { Board, BoardTick, Cell, RuleFunction } from '@sondregj/conway'
 
 const world: Board = {
     cells: [
