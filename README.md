@@ -37,11 +37,50 @@ A simple cellular automaton implementation, in TypeScript.
 ## Usage
 
 ```javascript
+import { advance } from '@sondregj/conway'
+
+const world = {
+    cells: [
+        [{ alive: false }, { alive: false }, { alive: true }],
+        [{ alive: true }, { alive: false }, { alive: true }],
+        [{ alive: false }, { alive: true }, { alive: true }],
+    ],
+}
+
+const day1 = advance(world)
+```
+
+You can also define custom rule functions.
+
+```javascript
+import { advance } from '@sondregj/conway'
+
+const world = {
+    cells: [
+        [{ alive: false }, { alive: false }, { alive: true }],
+        [{ alive: true }, { alive: false }, { alive: true }],
+        [{ alive: false }, { alive: true }, { alive: true }],
+    ],
+}
+
+const rules = (board, cell, x, y) => !cell.alive
+
+const day1 = advance(world, rules)
+```
+
+A convenience function for initializing boards is also included.
+
+```javascript
 import { initializeBoard, advance } from '@sondregj/conway'
 
 const board = initializeBoard(30, 30, { random: true })
 
 const nextStep = advance(board)
+```
+
+The following TypeScript types are included.
+
+```javascript
 ```
 
 ## License
