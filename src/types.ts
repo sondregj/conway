@@ -1,14 +1,11 @@
-// Data types
 export interface Cell {
     alive: boolean
 }
 
 export interface Board {
-    width: number
-    height: number
-
     cells: Cell[][]
 }
 
-// Transform functions
-export type BoardTick = (board: Board) => Board
+export type BoardTick = (board: Board, ...args: any[]) => Board
+
+export type RuleFunction = (board: Board, cell: Cell, x: number, y: number) => boolean
