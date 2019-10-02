@@ -1,23 +1,22 @@
 <h1 align="center">
-  <span style="font-size: 100px;">🧫</span>
+  <span style="font-size: 128px;">🧫</span>
+
   <br>
   <br>
-  Conway
+
+Conway
+
 </h1>
 
-<h4 align="center">Conway's Game of Life</h4>
+<h4 align="center">Cellular Automata</h4>
 
 <p align="center">
-  <a href="https://travis-ci.org/sondregj/conway">
-    <img alt="Travis Build Status" src="https://img.shields.io/travis/sondregj/conway.svg?style=flat-square">
+  <a href="https://npmjs.com/conway">
+  	<img alt="npm (latest)" src="https://img.shields.io/npm/v/@sondregj/conway/latest.svg?style=flat-square">
   </a>
 
   <a href="https://npmjs.com/conway">
-  	<img alt="npm (latest)" src="https://img.shields.io/npm/v/conway/latest.svg?style=flat-square">
-  </a>
-
-  <a href="https://npmjs.com/conway">
-    <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/conway.svg?style=flat-square">
+    <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/@sondregj/conway.svg?style=flat-square">
   </a>
 
   <a href="https://github.com/sondregj/conway">
@@ -33,7 +32,7 @@
   </a>
 </p>
 
-A simple Game of Life implementation, in TypeScript.
+A simple cellular automaton implementation, in TypeScript.
 
 ## Usage
 
