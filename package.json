@@ -1,7 +1,7 @@
 {
 	"name": "@sondregj/conway",
-	"version": "0.1.0",
-	"description": "Conway's Game of Life in TypeScript",
+	"version": "1.0.0",
+	"description": "Cellular Automata in TypeScript",
 	"author": "Sondre Gjellestad <sondre.gjellestad@hotmail.com> (https://sondregjellestad.space)",
 	"homepage": "https://github.com/sondregj/conway#readme",
 	"repository": {
@@ -38,6 +38,7 @@
 		"dist/**/*"
 	],
 	"keywords": [
-		"game-of-life", "conway"
+		"game-of-life",
+		"conway"
 	]
 }

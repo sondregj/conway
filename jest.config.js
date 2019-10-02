@@ -11,5 +11,5 @@ module.exports = {
 		"ts",
 		"js"
 	],
-	testRegex: "(/test/unit/.*|(\\.|/)(test|spec))\\.[jt]sx?$",
+	testRegex: "(/test/.*|(\\.|/)(test|spec))\\.[jt]sx?$",
 }

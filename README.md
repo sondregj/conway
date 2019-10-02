@@ -1,23 +1,22 @@
 <h1 align="center">
-  <span style="font-size: 100px;">🧫</span>
+  <span style="font-size: 128px;">🧫</span>
+
   <br>
   <br>
-  Conway
+
+Conway
+
 </h1>
 
-<h4 align="center">Conway's Game of Life</h4>
+<h4 align="center">Cellular Automata</h4>
 
 <p align="center">
-  <a href="https://travis-ci.org/sondregj/conway">
-    <img alt="Travis Build Status" src="https://img.shields.io/travis/sondregj/conway.svg?style=flat-square">
+  <a href="https://npmjs.com/conway">
+  	<img alt="npm (latest)" src="https://img.shields.io/npm/v/@sondregj/conway/latest.svg?style=flat-square">
   </a>
 
   <a href="https://npmjs.com/conway">
-  	<img alt="npm (latest)" src="https://img.shields.io/npm/v/conway/latest.svg?style=flat-square">
-  </a>
-
-  <a href="https://npmjs.com/conway">
-    <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/conway.svg?style=flat-square">
+    <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/@sondregj/conway.svg?style=flat-square">
   </a>
 
   <a href="https://github.com/sondregj/conway">
@@ -33,16 +32,73 @@
   </a>
 </p>
 
-A simple Game of Life implementation, in TypeScript.
+A simple cellular automaton implementation, in TypeScript.
 
 ## Usage
+
+Install by running `npm install @sondregj/conway`
+
+```javascript
+import { advance } from '@sondregj/conway'
+
+const world = {
+    cells: [
+        [{ alive: false }, { alive: false }, { alive: true }],
+        [{ alive: true }, { alive: false }, { alive: true }],
+        [{ alive: false }, { alive: true }, { alive: true }],
+    ],
+}
+
+const day1 = advance(world)
+```
+
+You can also define custom rule functions.
+
+```javascript
+import { advance } from '@sondregj/conway'
+
+const world = {
+    cells: [
+        [{ alive: false }, { alive: false }, { alive: true }],
+        [{ alive: true }, { alive: false }, { alive: true }],
+        [{ alive: false }, { alive: true }, { alive: true }],
+    ],
+}
+
+const rules = (board, cell, x, y) => !cell.alive
+
+const day1 = advance(world, rules)
+```
+
+A convenience function for initializing boards is also included.
 
 ```javascript
 import { initializeBoard, advance } from '@sondregj/conway'
 
-const board = initializeBoard(30, 30, { random: true })
+const genesis: Board = initializeBoard(64, 64, { random: true })
 
-const nextStep = advance(board)
+const day1 = advance(genesis)
+```
+
+The following TypeScript types are included.
+
+```typescript
+import { Board, BoardTick, Cell, RuleFunction } from '@sondregj/conway'
+
+const world: Board = {
+    cells: [
+        [{ alive: false }, { alive: false }, { alive: true }],
+        [{ alive: true }, { alive: false }, { alive: true }],
+        [{ alive: false }, { alive: true }, { alive: true }],
+    ],
+}
+
+const cell: Cell = { alive: true }
+
+const advance: BoardTick = (board: Board): Board => board
+
+const rules: RuleFunction = (board: Board, cell: Cell, x: number, y: number): boolean =>
+    true
 ```
 
 ## License
