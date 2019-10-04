@@ -1,6 +1,6 @@
 {
 	"name": "@sondregj/conway",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Cellular Automata in TypeScript",
 	"author": "Sondre Gjellestad <sondre.gjellestad@hotmail.com> (https://sondregjellestad.space)",
 	"homepage": "https://github.com/sondregj/conway#readme",
