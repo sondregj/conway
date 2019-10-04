@@ -1,6 +1,6 @@
 {
 	"name": "@sondregj/conway",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Cellular Automata in TypeScript",
 	"author": "Sondre Gjellestad <sondre.gjellestad@hotmail.com> (https://sondregjellestad.space)",
 	"homepage": "https://github.com/sondregj/conway#readme",
@@ -20,7 +20,7 @@
 		"preversion": "npm run lint",
 		"version": "npm run format && git add -A src",
 		"postversion": "git push && git push --tags",
-		"prepublishOnly": "npm test && npm run lint && npm run build"
+		"prepublishOnly": "npm ci && npm test && npm run lint && npm run build"
 	},
 	"bugs": {
 		"url": "https://github.com/sondregj/conway/issues"
