@@ -52,6 +52,8 @@ const world = {
 const day1 = advance(world)
 ```
 
+### Custom rule functions
+
 You can also define custom rule functions.
 
 ```javascript
@@ -70,6 +72,8 @@ const rules = (board, cell, x, y) => !cell.alive
 const day1 = advance(world, rules)
 ```
 
+### Initializing a board
+
 A convenience function for initializing boards is also included.
 
 ```javascript
@@ -79,6 +83,8 @@ const genesis: Board = initializeBoard(64, 64, { random: true })
 
 const day1 = advance(genesis)
 ```
+
+### TypeScript types
 
 The following TypeScript types are included.
 
