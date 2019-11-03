@@ -1,5 +1,5 @@
 import { RuleFunction } from './types'
-import { mooreNeighborhoodCount } from './utils'
+import { mooreNeighborhoodCount } from './neighborhood'
 
 export const conwayRules: RuleFunction = (board, cell, x, y) => {
     const neighbors = mooreNeighborhoodCount(board, x, y)
