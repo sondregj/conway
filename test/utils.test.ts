@@ -1,4 +1,4 @@
-import { Board, neighborCount } from '../src'
+import { Board, mooreNeighborhoodCount } from '../src'
 
 describe('Utility functions', () => {
     test('Neighbor count function works as expected', () => {
@@ -10,8 +10,8 @@ describe('Utility functions', () => {
             ],
         }
 
-        const count = neighborCount(world, 1, 1)
+        const count = mooreNeighborhoodCount(world, 1, 1)
 
-        expect(count).toStrictEqual(5)
+        expect(count).toEqual(5)
     })
 })
