@@ -1,4 +1,4 @@
-import { advance, Board } from '../src'
+import { advance, Board, RuleFunction } from '../src'
 
 describe('Advance function', () => {
     test('Function works as expected', () => {
@@ -10,13 +10,15 @@ describe('Advance function', () => {
             ],
         }
 
-        const day1 = advance(world)
+        const rules: RuleFunction = (board, cell, x, y) => !cell.alive
+
+        const day1 = advance(world, rules)
 
         const expected: Board = {
             cells: [
+                [{ alive: true }, { alive: true }, { alive: false }],
                 [{ alive: false }, { alive: true }, { alive: false }],
-                [{ alive: false }, { alive: false }, { alive: true }],
-                [{ alive: false }, { alive: true }, { alive: true }],
+                [{ alive: true }, { alive: false }, { alive: false }],
             ],
         }
 
