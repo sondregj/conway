@@ -1,8 +1,8 @@
-import { BoardTick } from './types'
+import { BoardTick, RuleFunction } from './types'
 
 import { conwayRules } from './rules'
 
-export const advance: BoardTick = (board, rules = conwayRules) => ({
+export const advance: BoardTick = (board, rules: RuleFunction = conwayRules) => ({
     cells: board.cells.map((row, yIndex) =>
         row
             .map((cell, xIndex) => rules(board, cell, xIndex, yIndex))
