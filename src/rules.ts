@@ -1,20 +1,19 @@
-import { RuleFunction } from './types'
+import { RuleFunction, Cell } from './types'
 import { mooreNeighborhoodCount } from './neighborhood'
 
-export const conwayRules: RuleFunction = (board, cell, x, y) => {
-    const neighbors = mooreNeighborhoodCount(board, x, y)
+const applyNeighbors = (
+    neighbors: number,
+    cell: Cell,
+    rules: (neighbors: number, cell: Cell) => boolean,
+) => rules(neighbors, cell)
 
-    if (!cell.alive && neighbors === 3) {
-        return true
-    }
-
-    if (neighbors < 2) {
-        return false
-    }
-
-    if (neighbors > 3) {
-        return false
-    }
-
-    return cell.alive
-}
+export const conwayRules: RuleFunction = (board, cell, x, y) =>
+    applyNeighbors(mooreNeighborhoodCount(board, x, y), cell, (neighbors, cell) =>
+        !cell.alive && neighbors === 3
+            ? true
+            : neighbors < 2
+            ? false
+            : neighbors > 3
+            ? false
+            : cell.alive,
+    )
