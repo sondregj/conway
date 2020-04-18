@@ -1,44 +1,45 @@
 {
-	"name": "@sondregj/conway",
-	"version": "1.0.1",
-	"description": "Cellular Automata in TypeScript",
-	"author": "Sondre Gjellestad <sondre.gjellestad@hotmail.com> (https://sondregjellestad.space)",
-	"homepage": "https://github.com/sondregj/conway#readme",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/sondregj/conway.git"
-	},
-	"license": "MIT",
-	"main": "dist/index.js",
-	"types": "dist/index.d.js",
-	"declaration": true,
-	"scripts": {
-		"build": "tsc",
-		"format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-		"lint": "tslint -p tsconfig.json",
-		"test": "jest",
-		"preversion": "npm run lint",
-		"version": "npm run format && git add -A src",
-		"postversion": "git push && git push --tags",
-		"prepublishOnly": "npm ci && npm test && npm run lint && npm run build"
-	},
-	"bugs": {
-		"url": "https://github.com/sondregj/conway/issues"
-	},
-	"devDependencies": {
-		"@types/jest": "^24.0.22",
-		"jest": "^24.9.0",
-		"prettier": "^1.18.2",
-		"ts-jest": "^24.1.0",
-		"tslint": "^5.20.1",
-		"tslint-config-prettier": "^1.18.0",
-		"typescript": "^3.7.2"
-	},
-	"files": [
-		"dist/**/*"
-	],
-	"keywords": [
-		"game-of-life",
-		"conway"
-	]
+    "name": "@sondregj/conway",
+    "version": "1.0.1",
+    "description": "Cellular Automata in TypeScript",
+    "author": "Sondre Gjellestad <sondre.gjellestad@hotmail.com> (https://sondregjellestad.space)",
+    "homepage": "https://github.com/sondregj/conway#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sondregj/conway.git"
+    },
+    "license": "MIT",
+    "main": "dist/index.js",
+    "types": "dist/index.d.js",
+    "declaration": true,
+    "scripts": {
+        "build": "tsc",
+        "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+        "lint": "eslint src/*",
+        "test": "jest",
+        "preversion": "npm run lint",
+        "version": "npm run format && git add -A src",
+        "postversion": "git push && git push --tags",
+        "prepublishOnly": "npm ci && npm test && npm run lint && npm run build"
+    },
+    "bugs": {
+        "url": "https://github.com/sondregj/conway/issues"
+    },
+    "devDependencies": {
+        "@types/jest": "^25.2.1",
+        "@typescript-eslint/eslint-plugin": "^2.28.0",
+        "@typescript-eslint/parser": "^2.28.0",
+        "eslint": "^6.8.0",
+        "jest": "^25.3.0",
+        "prettier": "^2.0.4",
+        "ts-jest": "^25.4.0",
+        "typescript": "^3.8.3"
+    },
+    "files": [
+        "dist/**/*"
+    ],
+    "keywords": [
+        "game-of-life",
+        "conway"
+    ]
 }
