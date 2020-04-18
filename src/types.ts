@@ -6,7 +6,8 @@ export interface Board {
     cells: Cell[][]
 }
 
-export interface Pattern {
+export interface Pattern extends Board {
+    name: string
     cells: Cell[][]
 }
 
