@@ -109,4 +109,4 @@ const rules: RuleFunction = (board: Board, cell: Cell, x: number, y: number): bo
 
 ## License
 
-MIT © 2019 Sondre Gjellestad
+MIT © 2020 Sondre Gjellestad
