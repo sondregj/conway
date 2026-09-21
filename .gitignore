@@ -75,3 +75,6 @@ dist
 
 # FuseBox cache
 .fusebox/
+
+# Misc.
+.DS_Store

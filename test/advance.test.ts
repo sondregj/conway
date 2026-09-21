@@ -1,23 +1,27 @@
-import { advance, Board } from '../src'
+import { advance, Board, RuleFunction } from '../src'
 
-test('Advance function works as expected', () => {
-    const world: Board = {
-        cells: [
-            [{ alive: false }, { alive: false }, { alive: true }],
-            [{ alive: true }, { alive: false }, { alive: true }],
-            [{ alive: false }, { alive: true }, { alive: true }],
-        ],
-    }
+describe('Advance function', () => {
+    test('Function works as expected', () => {
+        const world: Board = {
+            cells: [
+                [{ alive: false }, { alive: false }, { alive: true }],
+                [{ alive: true }, { alive: false }, { alive: true }],
+                [{ alive: false }, { alive: true }, { alive: true }],
+            ],
+        }
 
-    const day1 = advance(world)
+        const rules: RuleFunction = (board, cell, x, y) => !cell.alive
 
-    const expected: Board = {
-        cells: [
-            [{ alive: false }, { alive: true }, { alive: false }],
-            [{ alive: false }, { alive: false }, { alive: true }],
-            [{ alive: false }, { alive: true }, { alive: true }],
-        ],
-    }
+        const day1 = advance(world, rules)
 
-    expect(day1).toStrictEqual(expected)
+        const expected: Board = {
+            cells: [
+                [{ alive: true }, { alive: true }, { alive: false }],
+                [{ alive: false }, { alive: true }, { alive: false }],
+                [{ alive: true }, { alive: false }, { alive: false }],
+            ],
+        }
+
+        expect(day1).toEqual(expected)
+    })
 })

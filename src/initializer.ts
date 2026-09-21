@@ -1,4 +1,4 @@
-import { Board, Cell } from './types'
+import { Board, Cell, Pattern } from './types'
 
 interface BoardInitializerConfig {
     random?: boolean
@@ -25,3 +25,10 @@ export const initializeBoard = (
 
     return { cells }
 }
+
+export const applyPattern = (
+    board: Board,
+    pattern: Pattern,
+    x: number,
+    y: number,
+): Board => board
